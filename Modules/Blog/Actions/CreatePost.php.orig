@@ -1,0 +1,43 @@
+<?php
+
+namespace Modules\Blog\Actions;
+
+use Modules\Blog\Entities\Post;
+
+class CreatePost
+{
+<<<<<<< HEAD
+=======
+    // public static function create($request)
+    // {
+    //     $post = Post::create($request->except(['image']));
+
+    //     $image = $request->image;
+    //     if ($image) {
+    //         $url = uploadImage($image, 'post');
+    //         $post->update(['image' => $url]);
+    //     }
+
+    //     return $post;
+    // }
+>>>>>>> b6de5ed (Initial commit)
+    public static function create($request)
+    {
+        $post = Post::create($request->except(['image']));
+
+        $image = $request->image;
+        if ($image) {
+<<<<<<< HEAD
+            $url = uploadImage($image, 'post');
+=======
+
+            $path = 'uploads/images/post';
+            $url = uploadImage($image, $path, [800, 500]);
+
+>>>>>>> b6de5ed (Initial commit)
+            $post->update(['image' => $url]);
+        }
+
+        return $post;
+    }
+}
